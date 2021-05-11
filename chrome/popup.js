@@ -18,6 +18,13 @@ window.onload = function() {
       document.getElementById("input__city").setAttribute("disabled", true)
     }
   })
+
+  chrome.tabs.getSelected(null, function(tab) {
+
+  document.getElementById("title").value = tab.title;
+  document.getElementById("link").value = tab.url;
+
+});
 }
 
 // function myFunction() {
