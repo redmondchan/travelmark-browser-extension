@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Test Chrome Extension</title>
+  <script src="popup.js"></script>
+  <link rel="stylesheet" href="popup.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <div class="container">
+    <h2>Travelmark</h2>
+
+    <div class="dropdown">
+      <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+      <div id="myDropdown" class="dropdown-content">
+        <div class="dropdown-option"><span>Japan</span></div>
+        <div class="dropdown-option"><span>Thailand</span></div>
+        <div class="dropdown-option"><span>Mexico</span></div>
+        <div class="dropdown-option"><span>Vietnam</span></div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
