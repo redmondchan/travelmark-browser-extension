@@ -13,6 +13,7 @@
     <h2>Travelmark</h2>
 
     <form action="/action_page.php" method="get">
+      <label>Country:</label>
       <input list="countries" placeholder="Search Country.." id="input__country">
       <datalist id="countries">
         <option value="Japan">
@@ -21,6 +22,7 @@
         <option value="Vietnam">
         <option value="United States">
       </datalist>
+      <label>City:</label>
       <input list="cities" placeholder="Search City.." id="input__city" disabled>
       <datalist id="cities">
         <option value="Tokyo">
@@ -29,6 +31,10 @@
         <option value="Hanoi">
         <option value="New York">
       </datalist>
+      <label>Title:</label>
+      <input type="text" id="title" name="title">
+      <label>Link:</label>
+      <input type="text" id="link" name="link">
       <input type="submit">
     </form>
 
