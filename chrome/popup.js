@@ -10,7 +10,19 @@ window.onload = function() {
   //     })
   // }
   // console.log("add")
-  console.log("test")
+  fetch('http://localhost:8083/countries')
+    .then(response => response.json())
+    .then(data => {
+      for (let i = 0; i < data.length; i++) {
+        console.log(data[i].name)
+        let countriesDropdown = document.getElementById("countries")
+        let option = document.createElement("option")
+        option.value = data[i].name
+        option.id = data[i].id
+        countriesDropdown.append(option)
+      }
+    });
+  console.log("test");
   document.getElementById("input__country").addEventListener('change', (event) => {
     if (event.target.value != "") {
       document.getElementById("input__city").removeAttribute("disabled")
@@ -21,10 +33,10 @@ window.onload = function() {
 
   chrome.tabs.getSelected(null, function(tab) {
 
-  document.getElementById("title").value = tab.title;
-  document.getElementById("link").value = tab.url;
+    document.getElementById("title").value = tab.title;
+    document.getElementById("link").value = tab.url;
 
-});
+  });
 }
 
 // function myFunction() {
