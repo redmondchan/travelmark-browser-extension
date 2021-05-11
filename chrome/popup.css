@@ -1,7 +1,7 @@
 .container {
   height: 500px;
 }
-.dropbtn {
+/* .dropbtn {
   background-color: #04AA6D;
   color: white;
   padding: 16px;
@@ -50,4 +50,4 @@
 
 .dropdown-content div:hover {background-color: #ddd;}
 
-.show {display: block;}
+.show {display: block;} */
