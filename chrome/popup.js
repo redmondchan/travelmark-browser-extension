@@ -52,17 +52,15 @@ function removeAllChildNodes(parent) {
             cityOption.id = cities[i].id
             citiesDropdown.append(cityOption)
           }
-
-          //alert me if cities within the same country has the same name
+          //alerts me if a country has cities with the same name
           let citiesArr = []
-          for (let j = 0; i < cities.length; j++) {
-            citiesArr.push(cities[i].name)
+          for (let j = 0; j < cities.length; j++) {
+            citiesArr.push(cities[j].name)
           }
           let uniqueCities = [...new Set(citiesArr)]
           if(citiesArr.length != uniqueCities.length){
             alert("Duplicate Cities")
           }
-          
         })
     } else {
       document.getElementById("input__city").setAttribute("disabled", true)
