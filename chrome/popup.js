@@ -10,32 +10,45 @@ window.onload = function() {
   //     })
   // }
   // console.log("add")
+
+//creates city dropdown elements
   fetch('http://localhost:8083/countries')
     .then(response => response.json())
-    .then(data => {
-      for (let i = 0; i < data.length; i++) {
-        console.log(data[i].name)
+    .then(countries => {
+      for (let i = 0; i < countries.length; i++) {
         let countriesDropdown = document.getElementById("countries")
-        let option = document.createElement("option")
-        option.value = data[i].name
-        option.id = data[i].id
-        countriesDropdown.append(option)
+        let countryOption = document.createElement("option")
+        countryOption.value = countries[i].name
+        countryOption.id = countries[i].id
+        countriesDropdown.append(countryOption)
       }
     });
-  console.log("test");
+
+//creates city dropdown elements
   document.getElementById("input__country").addEventListener('change', (event) => {
     if (event.target.value != "") {
       document.getElementById("input__city").removeAttribute("disabled")
+      let selectedCountryId = document.querySelector(`[value=${event.target.value}]`)
+      fetch(`http://localhost:8083/findCitiesByCountryId/${selectedCountryId.id}`)
+        .then(response => response.json())
+        .then(cities => {
+          for (let i = 0; i < cities.length; i++) {
+            let citiesDropdown = document.getElementById("cities")
+            let cityOption = document.createElement("option")
+            cityOption.value = cities[i].name
+            cityOption.id = cities[i].id
+            citiesDropdown.append(cityOption)
+          }
+        })
     } else {
       document.getElementById("input__city").setAttribute("disabled", true)
     }
   })
 
+//grabs title and url from current chrome tab
   chrome.tabs.getSelected(null, function(tab) {
-
     document.getElementById("title").value = tab.title;
     document.getElementById("link").value = tab.url;
-
   });
 }
 
