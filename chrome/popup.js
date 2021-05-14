@@ -35,7 +35,7 @@ function removeAllChildNodes(parent) {
     //clears all city options so cities from other countries are not there when a user selects a different coutnry
     let citiesDropdown = document.getElementById("cities")
     removeAllChildNodes(cities)
-    //
+    //clears selected city when user changes country
     let cityInput = document.getElementById("input__city")
     cityInput.value = ""
 
