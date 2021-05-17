@@ -72,7 +72,33 @@ function removeAllChildNodes(parent) {
     document.getElementById("title").value = tab.title;
     document.getElementById("link").value = tab.url;
   });
+
+//grabs info from form and submits it to save article 
+  document.getElementById("form").addEventListener('submit', (e) => {
+    e.preventDefault()
+    console.log("submit")
+    let article = {}
+    article.title = document.getElementById("title").value
+    article.link = document.getElementById("title").value
+    let cityName = document.getElementById("input__city").value
+    article.city = {}
+    article.city.id = document.querySelector(`option[value="${cityName}"]`).id;
+    console.log(article)
+    fetch("http://localhost:8083/article", {
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      method: "POST",
+      body: JSON.stringify(article)
+    }).then(res => {
+      console.log(JSON.stringify(article))
+      console.log("Request complete! response:", res);
+      });
+    })
+
 }
+
 
 // function myFunction() {
 //   document.getElementById("myDropdown").classList.toggle("show");
