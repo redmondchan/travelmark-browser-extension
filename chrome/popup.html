@@ -12,14 +12,14 @@
   <div class="container">
     <h2>Travelmark</h2>
 
-    <form action="/action_page.php" method="get">
+    <form id="form">
       <label>Country:</label>
       <input list="countries" placeholder="Search Country.." id="input__country">
       <datalist id="countries">
         <!-- will be populated by fetch -->
       </datalist>
       <label>City:</label>
-      <input list="cities" placeholder="Search City.." id="input__city" disabled>
+      <input list="cities" placeholder="Search City.." id="input__city" disabled autocomplete="off">
       <datalist id="cities">
         <!-- will be populated by fetch -->
       </datalist>
@@ -27,7 +27,7 @@
       <input type="text" id="title" name="title">
       <label>Link:</label>
       <input type="text" id="link" name="link">
-      <input type="submit">
+      <input id="submit" type="submit">
     </form>
 
     <!-- <div class="dropdown">
