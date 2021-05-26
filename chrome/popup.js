@@ -34,7 +34,7 @@ function removeAllChildNodes(parent) {
   document.getElementById("input__country").addEventListener('change', (event) => {
     //clears all city options so cities from other countries are not there when a user selects a different coutnry
     let citiesDropdown = document.getElementById("cities")
-    removeAllChildNodes(cities)
+    removeAllChildNodes(citiesDropdown)
     //clears selected city when user changes country
     let cityInput = document.getElementById("input__city")
     cityInput.value = ""
@@ -73,7 +73,7 @@ function removeAllChildNodes(parent) {
     document.getElementById("link").value = tab.url;
   });
 
-//grabs info from form and submits it to save article 
+//grabs info from form and submits it to save article
   document.getElementById("form").addEventListener('submit', (e) => {
     e.preventDefault()
     console.log("submit")
