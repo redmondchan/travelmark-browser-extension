@@ -79,7 +79,7 @@ function removeAllChildNodes(parent) {
     console.log("submit")
     let article = {}
     article.title = document.getElementById("title").value
-    article.link = document.getElementById("title").value
+    article.link = document.getElementById("link").value
     let cityName = document.getElementById("input__city").value
     article.city = {}
     article.city.id = document.querySelector(`option[value="${cityName}"]`).id;
